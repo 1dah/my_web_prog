@@ -47,6 +47,37 @@
             width: 100%;
             bottom: 0;
         }
+	.wrapper {
+		display: flex;
+  		flex-direction: row;
+  		justify-content: center;
+  		align-items: center;
+}
+
+	.square {
+  		width: 100px;
+  		height: 100px;
+  		margin: 8px;
+  		font-size: 2em;
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  		border-radius: 8px;
+  		background-color: white;
+
+  	transition-property: box-shadow, transform;
+  	transition-duration: 350ms;
+  	transition-timing-function: ease;
+
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
+}
+
+.square:is(:hover, :focus) {
+  box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+}
+
+
     </style>
 </head>
 <body>
@@ -63,7 +94,11 @@
     <section><center>
         <h2>Hello Friends</h2>
         <hr>
-        <p>Hello</p>
+        <div class="wrapper">
+  <div class="square" tabindex="0">😐</div>
+  <div class="square" tabindex="0">🙂</div>
+  <div class="square" tabindex="0">😄</div>
+</div>
     </section>
 
     <footer>
