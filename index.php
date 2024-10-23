@@ -13,7 +13,7 @@
 
     <section><center>
         <h1>Hello Friends</h1>
-        <hr>
+         <br>
         <div class="wrapper">
 		<div class="square" tabindex="0">😐</div>
 		<div class="square" tabindex="0">🙂</div>
