@@ -1,9 +1,16 @@
-    <header class="headerimg"><br><br>
-      
+<header class="headerimg">
+
+
+<?php session_start();
+echo $_SESSION["username"];
+?><br>
+
+
     </header>
     
     <nav class="topnav">
        <a href="register.php">Register</a>
+       <a href="login.php">Login</a>
        <a href="index.php">Home</a>
        <a href="about.php">About</a>
        <a href="user.php">User</a>
@@ -11,6 +18,7 @@
        <a href="community.php">Community</a>
        <a href="contact.php">Contact</a>
        <a href="javascript:openNav()">Chat</a>
+
     </nav>
 
 <div id="mySidenav" class="sidenav">

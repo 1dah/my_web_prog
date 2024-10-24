@@ -31,10 +31,11 @@
     $stmt->bindParam(":email", $email);
     $stmt->bindParam(":password", $password);
     $stmt->execute();
-    header("Location: register_complete.php");
+    header("Location: index.php");
   }
 
  ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +48,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
-
+    <meta http-equiv="refresh" content="4; url=index.php" />
 </head>
 <body>
 
@@ -55,16 +56,8 @@
     
 	<section><center>
  
-  <form action="register.php" method="POST">
-        <h1>Register</h1>
-        <div class="inputs_container">
-            <input type="text" placeholder="Benutzername" name="username" autocomplete="off" required><br><br>
-            <input type="email" placeholder="Email" name="email" autocomplete="off" required><br><br>
-            <input type="password" minlength="6" placeholder="Passwort" name="password" autocomplete="off" required><br><br>
-        </div>
-        <button name="submit">Register</button>
-    </form>
-<br>
+<font color="green">Register Completed!</font><br>
+Redirecting...
     </section></center>
 
 
