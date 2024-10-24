@@ -16,10 +16,8 @@
 <?php  require_once("include/header.php") ?>
     
 	<section><center>
-        <h1>Hello</h1>
-        <p>My name is <b>Zohan</b></p>
-        <br>
-        <img src="imgs/pic.webp" border="1" height="300">
+        <h1>About Me</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p5XtvhR4oUY?si=isX3UCM7pnqqCCDW&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
 
 <?php  require_once("include/footer.php") ?>
