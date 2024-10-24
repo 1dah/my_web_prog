@@ -16,7 +16,7 @@
     $checkPassword = password_verify($password, $passwordHashed);
 
     if($checkPassword === false){
-      echo "Login fehlgeschlagen, Passwort stimmt nicht überein";
+      echo "Login failed.";
     }
     if($checkPassword === true){
 
