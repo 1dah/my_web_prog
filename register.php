@@ -1,30 +1,29 @@
 <?php
-  require("connection.php");
+require("connection.php");
 
-  if(isset($_POST["submit"])){
-    var_dump($_POST);
-
+if (isset($_POST["submit"])) {
+    // Entferne var_dump($_POST); um die Ausgabe zu vermeiden
     $username = $_POST["username"];
     $email = $_POST["email"];
-    $password = PASSWORD_HASH($_POST["password"], PASSWORD_DEFAULT);
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Kleinbuchstaben
 
+    // Überprüfen, ob der Benutzer oder die E-Mail bereits existiert
     $stmt = $con->prepare("SELECT * FROM users WHERE username=:username OR email=:email");
     $stmt->bindParam(":username", $username);
     $stmt->bindParam(":email", $email);
     $stmt->execute();
 
-    $userAlreadyExists = $stmt->fetchColumn();
-
-        if(!$userAlreadyExists){
-      //Registrieren
-      registerUser($username, $email, $password);
+    // Wenn ein Benutzer existiert, wird die Zeile als true gewertet
+    if ($stmt->rowCount() === 0) {
+        // Registrieren
+        registerUser($username, $email, $password);
+    } else {
+        // Benutzer existiert bereits, gib eine Fehlermeldung aus
+        $error_message = "Username or E-Mail already existing.";
     }
-    else{
-      //User existiert bereits
-    }
-  }
+}
 
-  function registerUser($username, $email, $password){
+function registerUser($username, $email, $password) {
     global $con;
     $stmt = $con->prepare("INSERT INTO users(username, email, password) VALUES(:username, :email, :password)");
     $stmt->bindParam(":username", $username);
@@ -32,9 +31,9 @@
     $stmt->bindParam(":password", $password);
     $stmt->execute();
     header("Location: register_complete.php");
-  }
-
- ?>
+    exit(); // Wichtig: Beende das Skript hier
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,11 +50,10 @@
 </head>
 <body>
 
-<?php  require_once("include/header.php") ?>
-    
-	<section><center>
- 
-  <form action="register.php" method="POST">
+<?php require_once("include/header.php") ?>
+
+<section><center>
+    <form action="register.php" method="POST">
         <h1>Register</h1>
         <div class="inputs_container">
             <input type="text" placeholder="Benutzername" name="username" autocomplete="off" required><br><br>
@@ -63,14 +61,14 @@
             <input type="password" minlength="6" placeholder="Passwort" name="password" autocomplete="off" required><br><br>
         </div>
         <button name="submit">Register</button>
+        <?php if (isset($error_message)): ?>
+            <p style="color:red;"><?php echo $error_message; ?></p>
+        <?php endif; ?>
     </form>
-<br>
-    </section></center>
+    <br>
+</section></center>
 
-
-
-
-<?php  require_once("include/footer.php") ?>
+<?php require_once("include/footer.php") ?>
 
 </body>
 </html>

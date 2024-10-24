@@ -1,8 +1,8 @@
 <?php
-
-  $dsn = 'mysql:dbname=userdb;host=localhost';
-  $username = 'root';
-  $password = '';
-
-  $con = new PDO($dsn, $username, $password);
- ?>
+try {
+    $con = new PDO('mysql:dbname=userdb;host=localhost', 'root', '');
+    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+?>
