@@ -11,6 +11,13 @@ a { font-family: "Pathway Extreme",system-ui,-apple-system,BlinkMacSystemFont,"S
             padding: 0;
 }
 
+.logged-in { 
+   display:block; 
+} 
+.logged-out { 
+   display:none; 
+} 
+
         header {
             background-color: #000000;
             color: white;

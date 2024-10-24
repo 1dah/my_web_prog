@@ -1,10 +1,8 @@
 <header class="headerimg">
 
-
 <?php session_start();
 echo $_SESSION["username"];
-?><br>
-
+?><br><a href="logout.php">Logout</a>
 
     </header>
     
