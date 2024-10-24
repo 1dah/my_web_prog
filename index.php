@@ -23,7 +23,8 @@
 		<div class="square" tabindex="0">🙂</div>
 		<div class="square" tabindex="0">😄</div>
 		</div>
-    </section>
+         <br>    
+</section>
 
 <?php  require_once("include/footer.php") ?>
 

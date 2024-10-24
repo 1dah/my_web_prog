@@ -40,6 +40,14 @@ a { font-family: "Pathway Extreme",system-ui,-apple-system,BlinkMacSystemFont,"S
   overflow: hidden;
 }
 
+.topbar {
+  background-color: #272727;
+  padding: 10px 12px;
+  overflow: hidden;
+  text-align: center;
+
+}
+
 input {
      padding: 7px;
      font-size: 14px;

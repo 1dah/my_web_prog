@@ -16,11 +16,12 @@
 <?php  require_once("include/header.php") ?>
     
 	<section><center>
-        <h1>User Interface</h1>
-        <p>##########################################</p>
-    
+        <h1>User Interface</h1></center>
+        <p>Username: <?php session_start();
+echo $_SESSION["username"];
+?></p>
 
-    </section>
+</section>
 
 <?php  require_once("include/footer.php") ?>
 
