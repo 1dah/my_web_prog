@@ -1,3 +1,3 @@
-    <footer class="footerbg">
-        <p>&copy; 2024 by 😈</p>
-    </footer>
+<footer class="footerbg">
+<p>&copy; 2024 by 😈</p>
+</footer>
