@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Members</title>
     <meta name="description" content="test">
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,24 +16,11 @@
 <?php  require_once("include/header.php") ?>
     
 	<section><center>
-        <h1>Register</h1>
+        <h1>Members</h1>
+        <p>##########################################</p>
+    
 
-<form>  
-<label> Username </label> <br>
-<input type="text" name="username"> <br> <br>  
-
-<label> Email </label><br>
-<input type="email" id="email" name="email"/> <br> <br> 
-
-<label> Password </label><br>
-<input type="Password" id="pass" name="pass"> <br> <br>
-
-<label>Re-type password </label><br>
-<input type="Password" id="repass" name="repass"> <br> <br>
-<input type="button" value="Register"/>  
-</form>  
-<br>
-    </section></center>
+    </section>
 
 <?php  require_once("include/footer.php") ?>
 
